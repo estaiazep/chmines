@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <title>Game Hub</title>
+</head>
+<body class="use-tg-theme">
+<input type="hidden" id="language" value="english"/>
+
+<header>
+    <div class="header-container">
+        <div class="logo-container">
+            <a id="nameCanal" class="sync-gradient-text">@minesbot9876_bot</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="games-bg">
+        <div class="bg-gradient"></div>
+        <div class="bg-spot spot1"></div>
+        <div class="bg-spot spot2"></div>
+        <div class="bg-spot spot3"></div>
+        <div class="bg-falling falling1"></div>
+        <div class="bg-falling falling2"></div>
+    </div>
+    <div class="games-container">
+        <div class="games-grid">
+            <!-- Mines -->
+            <a href="/mines?userLanguage=english&amp;botName=@minesbot9876_bot"
+               class="game-card" id="mines" data-tags="mines">
+                <div class="game-icon">
+                    <img loading="lazy" src="mines.jpeg" alt="Mines"/>
+                </div>
+                <div class="game-title">Mines</div>
+            </a>
+
+            <!-- Chicken Road (instead of Aviator) -->
+            <a href="/chickenroad?userLanguage=english&amp;botName=@minesbot9876_bot"
+               class="game-card" id="chickenroad" data-tags="crash">
+                <div class="game-icon">
+                    <img loading="lazy" src="chickenroad.jpeg" alt="Chicken Road"/>
+                </div>
+                <div class="game-title">Chicken Road</div>
+            </a>
+        </div>
+    </div>
+</main>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="main.js"></script>
+
+<script>
+    Telegram.WebApp.expand();
+    window.Telegram.WebApp.allow_vertical_swipe = false;
+    window.Telegram.WebApp.disableVerticalSwipes();
+
+    var userLanguage = document.getElementById("language").value;
+    setLanguage(userLanguage);
+</script>
+</body>
+</html>
